@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080)",
+      "Bash(curl -s http://localhost:8080/index.html)",
+      "Bash(python3 -c ' *)",
+      "Bash(identify /home/xavier/webclub/assets/img/*.avif)",
+      "Bash(file /home/xavier/webclub/assets/img/*.avif)",
+      "WebSearch"
+    ]
+  }
+}

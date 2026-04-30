@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fer-se Soci — Club Pesca Caiac Catalunya</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main class="page-main">
+    <div class="page-banner page-banner--dark">
+      <div class="page-banner-overlay">
+        <div class="container">
+          <h1>Fer-se Soci</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page-content">
+
+      <!-- TAULA DE PREUS -->
+      <div class="preus-bloc">
+
+        <div class="preus-taula-wrap">
+          <table class="preus-taula">
+            <thead>
+              <tr>
+                <th>Concepte</th>
+                <th>Any 1</th>
+                <th>Any 2</th>
+                <th>Any 3</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Matrícula</td>
+                <td>30€</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>Quota social</td>
+                <td>40€</td>
+                <td>40€*</td>
+                <td>35€*</td>
+              </tr>
+              <tr>
+                <td>Federativa base Catalana / Federativa Alt Nivell Espanya</td>
+                <td>35€ / 60€</td>
+                <td>35€ / 60€*</td>
+                <td>35€ / 60€*</td>
+              </tr>
+              <tr class="preus-total">
+                <td>Total (Fed. Cat. / Fed. Nac.)**</td>
+                <td>105€ / 130€</td>
+                <td>75€ / 100€*</td>
+                <td>70€ / 95€*</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="preus-nota">* Imports subjectes a canvis de la Federació i canvis decidits en la Junta Directiva del Club</p>
+
+        <h3 class="preus-subtitol">Conceptes</h3>
+
+        <p><strong>Matrícula</strong>: es paga un cop quan un es converteix en Soci. Serveix per finançar el Club en les seves activitats i només es paga el primer any del Soci.</p>
+        <p><strong>Quota social</strong>: es paga anualment i serveix per finançar el Club en les seves activitats, premis, etc.</p>
+        <p><strong>Llicència</strong> Federativa (Esport base o Alt Nivell): la Federativa NO NOMÉS serveix per poder Competir. Inclou una assegurança de RC que ens <strong>permetrà</strong> poder participar en totes les activitats lúdiques que organitzi el Club: quedades, socials, actuacions solidàries, sortides científiques, suport a Clubs o entitats en que es requereixi caiacs, així com qualsevol sortida amb caiac que el Soci faci pel seu compte. Individualment. Aquesta assegurança RC també el <strong>protegirà</strong> de possibles demandes del mal que el Soci pogués fer a terceres persones amb el caiac i accessoris.</p>
+        <p>La Llicència d'esport Base (35€) ens permet anar a Campionats organitzats a tot Catalunya.<br />
+        La Llicència d'alt Nivell (60€) és necessària si vols competir a nivell nacional (prèviament has d'haver participat en el Campionat de Catalunya 2018 que es realitzarà el 22 d'abril).</p>
+
+        <div class="preus-pagament">
+          <h3 class="preus-subtitol">Pagament quota soci i formalització</h3>
+          <ol class="preus-passos">
+            <li>FES INGRÉS a compte corrent per transferència <strong>2100 1686 52 0200190463</strong><br />
+                IBAN <strong>ES8321001686520200190463</strong> indicant com a Referència el teu NIF</li>
+            <li>ENVIA'NS LES TEVES DADES EN EL FORMULARI DE BAIX</li>
+            <li>REVISAREM LA INFORMACIÓ REBUDA I EL PAGAMENT</li>
+            <li>SI S'ADMET LA SOL·LICITUD, GENEREM LLICÈNCIA — CARNET DEL CLUB I LA FEDERACIÓ I TE'L FEM ARRIBAR PER EMAIL</li>
+            <li>ET DONEN D'ALTA A TOTS ELS CANALS DE COMUNICACIÓ DEL CLUB</li>
+            <li>En el supòsit que no s'admeti la sol·licitud es realitzarà la devolució al compte del sol·licitant. El Club facilitarà la opció de poder tramitar la devolució a un compte de la Caixa per evitar comissions bancàries.</li>
+          </ol>
+        </div>
+
+      </div>
+      <!-- FI TAULA DE PREUS -->
+
+      <p class="section-intro">Completa les teves dades per sol·licitar l'ingrés al Club.</p>
+      <form id="soci-form" action="https://formspree.io/f/xkoywnyw" method="POST" novalidate>
+        <p class="form-legend">Completa les teves dades</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom *</label>
+            <input type="text" id="nom" name="nom" required placeholder="Nom" />
+          </div>
+          <div class="form-group">
+            <label for="cognom">Cognom *</label>
+            <input type="text" id="cognom" name="cognom" required placeholder="Cognom" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="nif">NIF *</label>
+          <input type="text" id="nif" name="nif" required placeholder="NIF" />
+        </div>
+        <div class="form-group">
+          <label for="data-naixement">Data de naixement *</label>
+          <input type="date" id="data-naixement" name="data_naixement" required />
+        </div>
+        <div class="form-group">
+          <label for="adreca">Adreça *</label>
+          <input type="text" id="adreca" name="adreca" required placeholder="Adreça" />
+        </div>
+        <div class="form-group">
+          <label for="adreca2">Adreça 2</label>
+          <input type="text" id="adreca2" name="adreca2" placeholder="Adreça 2" />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ciutat">Ciutat *</label>
+            <input type="text" id="ciutat" name="ciutat" required placeholder="Ciutat" />
+          </div>
+          <div class="form-group">
+            <label for="provincia">Estat / Regió *</label>
+            <input type="text" id="provincia" name="provincia" required placeholder="Estat / Regió" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cp">Codi postal *</label>
+          <input type="text" id="cp" name="cp" required placeholder="Codi postal" />
+        </div>
+        <div class="form-group">
+          <label for="email">Correu electrònic *</label>
+          <input type="email" id="email" name="email" required placeholder="Correu electrònic" />
+        </div>
+        <div class="form-group">
+          <label for="telefon">Telèfon *</label>
+          <div class="input-prefix-wrap">
+            <span class="input-prefix">🇪🇸 +34</span>
+            <input type="tel" id="telefon" name="telefon" required placeholder="Telèfon" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Tipus de llicència *</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="llicencia" value="Federativa catalana esport base" required />
+              Federativa catalana esport base
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="llicencia" value="Federativa espanyola alt nivell" />
+              Federativa espanyola alt nivell
+            </label>
+          </div>
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" id="accepto-info" name="accepto_informacio" required />
+          <label for="accepto-info">Acceptes rebre informació d'altres entitats que tinguin convenis i relacions amb el Club *</label>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn--primary">Enviar</button>
+        </div>
+        <div id="form-status" class="form-status" aria-live="polite"></div>
+      </form>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacte — Club Pesca Caiac Catalunya</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main class="page-main">
+    <div class="page-banner page-banner--dark">
+      <div class="page-banner-overlay">
+        <div class="container">
+          <h1>Contacte</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page-content">
+      <div class="contacte-grid">
+        <div class="contacte-info">
+          <h3>Informació de contacte</h3>
+          <ul class="contact-list">
+            <li>
+              <span class="contact-icon">📍</span>
+              <a href="https://maps.google.com/?q=Puerto+del+Garraf,+Garraf,+Barcelona" target="_blank" rel="noopener" class="link">Port del Garraf, Barcelona</a>
+            </li>
+            <li>
+              <span class="contact-icon">📞</span>
+              <a href="tel:+34605989814">+34 605 989 814</a>
+            </li>
+            <li>
+              <span class="contact-icon">✉️</span>
+              <a href="mailto:info.clubpescacaiaccatalunya@gmail.com">info.clubpescacaiaccatalunya@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+        <div class="contacte-form-wrap">
+          <h3>Envia'ns un missatge</h3>
+          <form id="contacte-form" action="https://formspree.io/f/xkoywnyw" method="POST" novalidate>
+            <div class="form-group">
+              <label for="c-nom">Nom *</label>
+              <input type="text" id="c-nom" name="nom" required placeholder="El teu nom" />
+            </div>
+            <div class="form-group">
+              <label for="c-email">Correu electrònic *</label>
+              <input type="email" id="c-email" name="email" required placeholder="tu@exemple.com" />
+            </div>
+            <div class="form-group">
+              <label for="c-assumpte">Assumpte</label>
+              <input type="text" id="c-assumpte" name="assumpte" placeholder="Assumpte del missatge" />
+            </div>
+            <div class="form-group">
+              <label for="c-missatge">Missatge *</label>
+              <textarea id="c-missatge" name="missatge" rows="5" required placeholder="Escriu aquí el teu missatge..."></textarea>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">Enviar missatge</button>
+            </div>
+            <div id="contacte-form-status" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/components.js"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
