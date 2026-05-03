@@ -5,7 +5,7 @@
 /* Google Font */
 const fontLink = document.createElement('link');
 fontLink.rel  = 'stylesheet';
-fontLink.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Raleway:wght@400;500;600&display=swap';
+fontLink.href = 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap';
 document.head.appendChild(fontLink);
 
 const NAV_LINKS = [
@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { href: 'fer-se-soci.html', text: 'Fer-se Soci' },
   { href: 'contacte.html',    text: 'Contacte' },
   { href: 'collaboradors.html', text: 'Col·laboradors' },
+  { href: 'seguretat.html',    text: 'Seguretat' },
 ];
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -66,7 +67,7 @@ document.getElementById('site-footer').innerHTML = `
         Instagram
       </a>
     </div>
-    <a href="assets/decaleg.pdf" download="Decaleg-ClubPescaCaiacCatalunya.pdf" class="footer-decaleg-link">⬇ Descarregar el Decàleg</a>
+    <a href="assets/decaleg.pdf" download="Decaleg-ClubPescaCaiacCatalunya.pdf" class="footer-decaleg-link">Descarregar el Decàleg</a>
     <p class="footer-credits">© 2026 Club Pesca Caiac Taurons Catalunya. Drets reservats</p>
   </div>
 </footer>`;
