@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { href: 'fer-se-soci.html', text: 'Fer-se Soci' },
   { href: 'contacte.html',    text: 'Contacte' },
   { href: 'collaboradors.html', text: 'Col·laboradors' },
+  { href: 'seguretat.html',    text: 'Seguretat' },
 ];
 
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';

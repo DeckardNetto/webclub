@@ -1744,6 +1744,321 @@ footer p { font-size: .88rem; }
 .social-link:hover { color: var(--color-white); }
 
 /* =========================================================
+   Seguretat — Protocol Tècnic
+   ========================================================= */
+.seg-protocol {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.seg-doc-header {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.seg-doc-header h1 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.seg-doc-meta {
+  font-size: .7rem;
+  color: rgba(255,255,255,.5);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.9;
+  flex-shrink: 0;
+}
+
+.seg-bento {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #c8d4de;
+  gap: 1px;
+  border: 1px solid #c8d4de;
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  overflow: hidden;
+}
+
+.seg-block {
+  background: var(--color-white);
+  padding: 1.75rem 2rem;
+}
+
+.seg-block--full {
+  grid-column: 1 / -1;
+}
+
+.seg-block-label {
+  font-size: .67rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: .3rem;
+}
+
+.seg-block-title {
+  font-size: .93rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 1.25rem;
+  padding-bottom: .55rem;
+  border-bottom: 1px solid #dde4ec;
+}
+
+.seg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+
+.seg-table thead tr {
+  background: #eef2f7;
+}
+
+.seg-table th {
+  padding: .55rem .85rem;
+  text-align: left;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border-bottom: 1.5px solid #c8d4de;
+}
+
+.seg-table td {
+  padding: .65rem .85rem;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: top;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.seg-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.seg-item-name {
+  font-weight: 600;
+  color: var(--color-primary) !important;
+  font-size: .85rem !important;
+  white-space: nowrap;
+}
+
+.seg-tag {
+  display: inline-block;
+  padding: .2rem .5rem;
+  font-size: .63rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.seg-tag--req  { background: var(--color-primary);   color: var(--color-white); }
+.seg-tag--rec  { background: var(--color-secondary); color: var(--color-white); }
+.seg-tag--cond { background: var(--color-steel);     color: var(--color-white); }
+
+.seg-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.seg-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.seg-steps li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.seg-step-num {
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  color: var(--color-secondary);
+  background: #eef2f7;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+
+.seg-step-body {
+  flex: 1;
+}
+
+.seg-step-body strong {
+  display: block;
+  font-size: .92rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: .3rem;
+}
+
+.seg-step-body p {
+  font-size: .9rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.seg-meteo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .75rem;
+}
+
+.seg-meteo-link {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid #c8d4de;
+  border-radius: 4px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.seg-meteo-link:hover {
+  border-color: var(--color-secondary);
+  background: #f4f9fb;
+}
+
+.seg-meteo-arrow {
+  position: absolute;
+  top: .7rem;
+  right: .8rem;
+  font-size: .75rem;
+  color: var(--color-muted);
+  font-style: normal;
+}
+
+.seg-meteo-name {
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1.2;
+  padding-right: 1.2rem;
+}
+
+.seg-meteo-desc {
+  font-size: .77rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+.seg-alert {
+  border: 1.5px solid #b91c1c;
+  border-left: 4px solid #b91c1c;
+  border-radius: 0 4px 4px 0;
+  background: #fef9f9;
+  padding: 1.25rem 1.5rem;
+}
+
+.seg-alert-label {
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #b91c1c;
+  margin-bottom: .55rem;
+}
+
+.seg-alert p {
+  font-size: .93rem;
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.seg-emergency-row {
+  display: flex;
+  gap: .75rem;
+  margin-bottom: 1rem;
+}
+
+.seg-emergency-link {
+  display: flex;
+  flex-direction: column;
+  gap: .15rem;
+  padding: .9rem 1.25rem;
+  border: 1px solid #c8d4de;
+  border-left: 3px solid var(--color-primary);
+  border-radius: 0 4px 4px 0;
+  background: #f7f9fb;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.seg-emergency-link:hover {
+  border-color: var(--color-secondary);
+  border-left-color: var(--color-secondary);
+  background: #f0f7fa;
+}
+
+.seg-emergency-label {
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.seg-emergency-num {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: .04em;
+  line-height: 1;
+}
+
+.seg-emergency-sub {
+  font-size: .7rem;
+  color: var(--color-muted);
+  letter-spacing: .03em;
+}
+
+@media (max-width: 640px) {
+  .seg-bento { grid-template-columns: 1fr; }
+  .seg-block--full { grid-column: 1; }
+  .seg-meteo-grid  { grid-template-columns: 1fr 1fr; }
+  .seg-doc-header  { flex-direction: column; align-items: flex-start; gap: .5rem; }
+  .seg-doc-meta    { text-align: left; }
+  .seg-item-name   { white-space: normal; }
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 @media (max-width: 900px) {
