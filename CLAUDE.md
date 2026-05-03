@@ -2,7 +2,7 @@
 
 ## Stack
 HTML estàtic pur + CSS + JS vanilla. Sense frameworks, sense build tools, sense Node/npm.
-Servidor local de preview: `python3 -m http.server 8080` (des de `/home/xavier/webclub`)
+Servidor local de preview: `python3 -m http.server 9000` (des de `/home/xavier/webclub`)
 
 ## Estructura
 ```

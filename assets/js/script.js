@@ -47,34 +47,42 @@ if (page === 'index.html' || page === '') {
 if (page === 'valors.html' || page === 'decaleg.html') {
   const decalegItems = [
     {
+      icon: '⚧',
       titol: 'Condició de gènere',
       text: "Promocionar la activitat facilitant l'accés a la dona bé mitjançant la promoció al col·lectiu bé treballant amb entitats com l'Institut Català de la Dona."
     },
     {
+      icon: '🔬',
       titol: 'Col·laboració amb la Comunitat Científica',
       text: "Ens posarem a disposició d'aquelles Entitats i Institucions per tal de participar en aquelles tasques en les que l'associat pugui ser-ne útil: seguiment de peixos, marcatge, reculls de fons marí..."
     },
     {
+      icon: '🌍',
       titol: 'Promoure la Ciència Ciutadana',
       text: "Basant-nos en la informació rebuda mitjançant la observació, exploració i posterior recollida de dades del medi ambient la farem arribar a aquells Ens o Institucions amb les que hi col·laborem."
     },
     {
+      icon: '🌿',
       titol: 'Promoure el respecte a la natura i el medi ambient',
       text: "Com a referents en la pesca responsable, sostenible i respectuosa amb el medi, fomentarem aquella pesca que promogui l'alliberament i la pesca de peixos i fer-ho de la millor manera possible causant el mínim dany a les espècies pescades."
     },
     {
+      icon: '🧒',
       titol: 'Promoure la activitat als joves',
       text: "Fomentarem l'ús del caiac com a mitjà per integrar-se i fomentar el respecte pel medi ambient i la naturalesa practicant una pesca responsable, segura i sostenible des dels inicis."
     },
     {
+      icon: '♿',
       titol: 'Esport adaptat',
       text: "Hi ha col·lectius que han de poder gaudir tant de la part recreativa de l'activitat com esportiva. Col·laborarem per facilitar l'accés a l'Activitat a aquells col·lectius amb certes discapacitats col·laborant amb aquelles entitats i associacions que els representen."
     },
     {
+      icon: '⚓',
       titol: "Col·laborar amb la gestió de l'activitat i cogestió de les activitats marítimes",
       text: "Harmonitzar els interessos i minimitzar els conflictes entre els diferents col·lectius que compartim el medi. Ser interlocutors vàlids i únics."
     },
     {
+      icon: '🤝',
       titol: 'Amistat i companyerisme',
       text: "Compartir el plaer per la natura i la pesca i fer-ho des de l'amistat i el companyerisme i bon ambient és fonamental."
     }
@@ -85,14 +93,14 @@ if (page === 'valors.html' || page === 'decaleg.html') {
     const liItems = decalegItems.map(item => `
       <li>
         <div>
-          <div class="decaleg-item-title">${item.titol}</div>
+          <div class="decaleg-item-title"><span class="card-icon">${item.icon}</span>${item.titol}</div>
           <div class="decaleg-item-text">${item.text}</div>
         </div>
       </li>
     `);
 
-    // Esfera Decàleg al centre (posició 5 = índex 4)
-    liItems.splice(4, 0, `<li class="decaleg-center"><a href="decaleg.html" class="btn-decaleg">DECÀLEG</a></li>`);
+    // Targeta Decàleg al centre (posició 5 = índex 4)
+    liItems.splice(4, 0, `<li class="decaleg-center"><span class="decaleg-center-icon">📜</span><p class="decaleg-center-title">Decàleg<br>del Club</p><a href="decaleg.html" class="btn-decaleg">Llegir-lo →</a></li>`);
 
     listEl.innerHTML = liItems.join('');
   }

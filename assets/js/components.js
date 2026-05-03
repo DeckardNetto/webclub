@@ -31,12 +31,14 @@ document.getElementById('site-header').innerHTML = `
     <button class="nav-toggle" aria-label="Obrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <a href="index.html" class="logo-link">
-      <img src="assets/img/logoclub.avif" alt="Logo Club Pesca Caiac Catalunya" class="logo" />
-    </a>
-    <span class="header-club-name">Club Pesca Caiac Catalunya</span>
-    <a href="https://appconcursospesca-production.up.railway.app/login"
-       class="btn-lliga" target="_blank" rel="noopener">Lliga</a>
+    <div class="header-brand-content">
+      <a href="index.html" class="logo-link">
+        <img src="assets/img/logoclub.avif" alt="Logo Club Pesca Caiac Catalunya" class="logo" />
+      </a>
+      <span class="header-club-name">Club Pesca Caiac Catalunya</span>
+      <a href="https://appconcursospesca-production.up.railway.app/login"
+         class="btn-lliga" target="_blank" rel="noopener">Lliga</a>
+    </div>
   </div>
   <nav id="main-nav">
     <ul>${navItems}</ul>
@@ -64,6 +66,7 @@ document.getElementById('site-footer').innerHTML = `
         Instagram
       </a>
     </div>
+    <a href="assets/decaleg.pdf" download="Decaleg-ClubPescaCaiacCatalunya.pdf" class="footer-decaleg-link">⬇ Descarregar el Decàleg</a>
     <p class="footer-credits">© 2026 Club Pesca Caiac Taurons Catalunya. Drets reservats</p>
   </div>
 </footer>`;
