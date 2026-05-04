@@ -82,6 +82,7 @@ a   { color: inherit; text-decoration: none; }
   justify-content: center;
   background: #ffffff;
   padding: .6rem 2rem;
+  position: relative;
 }
 
 .header-brand-content {
@@ -111,6 +112,37 @@ a   { color: inherit; text-decoration: none; }
 .club-name  { display: none; }
 .club-line1 { display: none; }
 .club-line2 { display: none; }
+
+/* Selector d'idioma */
+.lang-selector {
+  position: absolute;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: #aab4bc;
+  padding: .2rem .1rem;
+  transition: color var(--transition);
+}
+
+.lang-btn:hover   { color: var(--color-primary); }
+.lang-btn--active { color: var(--color-primary); }
+
+.lang-sep {
+  font-size: .65rem;
+  color: #ccd4da;
+  user-select: none;
+}
 
 .btn-lliga {
   flex-shrink: 0;

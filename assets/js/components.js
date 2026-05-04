@@ -40,6 +40,11 @@ document.getElementById('site-header').innerHTML = `
       <a href="https://appconcursospesca-production.up.railway.app/login"
          class="btn-lliga" target="_blank" rel="noopener">Lliga</a>
     </div>
+    <div class="lang-selector" aria-label="Selecció d'idioma">
+      <button class="lang-btn" data-lang="ca">CA</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" data-lang="es">ES</button>
+    </div>
   </div>
   <nav id="main-nav">
     <ul>${navItems}</ul>
@@ -86,6 +91,17 @@ mainNav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     navToggle.setAttribute('aria-expanded', 'false');
     mainNav.classList.remove('open');
+  });
+});
+
+/* Lang selector */
+const activeLang = localStorage.getItem('lang') || 'ca';
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  if (btn.dataset.lang === activeLang) btn.classList.add('lang-btn--active');
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('lang-btn--active'));
+    btn.classList.add('lang-btn--active');
+    localStorage.setItem('lang', btn.dataset.lang);
   });
 });
 
