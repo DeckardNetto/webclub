@@ -2108,9 +2108,9 @@ footer p { font-size: .88rem; }
   .seg-table th:nth-child(2),
   .seg-table td:nth-child(2) { display: none; }
   .seg-table th:first-child,
-  .seg-table td:first-child { width: 75%; }
+  .seg-table td:first-child { width: 68%; }
   .seg-table th:last-child,
-  .seg-table td:last-child  { width: 25%; }
+  .seg-table td:last-child  { width: 32%; }
 }
 
 /* =========================================================
