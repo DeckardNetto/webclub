@@ -1865,7 +1865,14 @@ footer p { font-size: .88rem; }
   width: 100%;
   border-collapse: collapse;
   font-size: .88rem;
+  table-layout: fixed;
 }
+
+.seg-table th:first-child,
+.seg-table td:first-child { width: 32%; }
+
+.seg-table th:last-child,
+.seg-table td:last-child  { width: 18%; text-align: center; }
 
 .seg-table thead tr {
   background: #eef2f7;
@@ -1898,7 +1905,8 @@ footer p { font-size: .88rem; }
   font-weight: 600;
   color: var(--color-primary) !important;
   font-size: .85rem !important;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .seg-tag {
@@ -2092,11 +2100,17 @@ footer p { font-size: .88rem; }
 @media (max-width: 720px) {
   .seg-bento { grid-template-columns: 1fr; }
   .seg-block--full { grid-column: 1; }
+  .seg-block { padding: 1.25rem 1rem; }
   .seg-meteo-grid  { grid-template-columns: 1fr 1fr; }
   .seg-doc-header  { flex-direction: column; align-items: flex-start; gap: .5rem; }
   .seg-doc-meta    { text-align: left; }
-  .seg-item-name   { white-space: normal; }
   .seg-emergency-banner { padding: .55rem 1rem; }
+  .seg-table th:nth-child(2),
+  .seg-table td:nth-child(2) { display: none; }
+  .seg-table th:first-child,
+  .seg-table td:first-child { width: 75%; }
+  .seg-table th:last-child,
+  .seg-table td:last-child  { width: 25%; }
 }
 
 /* =========================================================
