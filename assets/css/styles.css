@@ -1783,45 +1783,41 @@ footer p { font-size: .88rem; }
 
 .seg-emergency-banner {
   background: #b91c1c;
-  padding: 1rem 2rem;
+  padding: .55rem 2rem;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: .75rem;
   flex-wrap: wrap;
 }
 
 .seg-emergency-banner-label {
-  font-size: .65rem;
-  font-weight: 800;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,.75);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: rgba(255,255,255,.8);
   white-space: nowrap;
 }
 
-.seg-emergency-banner-nums {
-  display: flex;
-  gap: .75rem;
-  flex-wrap: wrap;
-  flex: 1;
+.seg-emergency-banner-num {
+  font-size: .95rem;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+.seg-emergency-banner-num:hover { text-decoration: underline; }
+
+.seg-emergency-banner-sep {
+  color: rgba(255,255,255,.4);
+  font-size: .9rem;
 }
 
-.seg-emergency-link--banner {
-  background: rgba(255,255,255,.12);
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 6px;
-  padding: .6rem 1.25rem;
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: .1rem;
-  transition: background var(--transition);
+.seg-emergency-banner-sub {
+  font-size: .68rem;
+  color: rgba(255,255,255,.55);
+  margin-left: .25rem;
 }
-.seg-emergency-link--banner:hover { background: rgba(255,255,255,.22); }
-.seg-emergency-link--banner .seg-emergency-label { color: rgba(255,255,255,.7); }
-.seg-emergency-link--banner .seg-emergency-num   { color: #fff; }
-.seg-emergency-link--banner .seg-emergency-sub   { color: rgba(255,255,255,.6); }
 
 .seg-bento {
   display: grid;
