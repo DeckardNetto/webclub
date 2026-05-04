@@ -1872,9 +1872,9 @@ footer p { font-size: .88rem; }
   white-space: nowrap;
 }
 
-.seg-tag--req  { background: var(--color-primary);   color: var(--color-white); }
-.seg-tag--rec  { background: var(--color-secondary); color: var(--color-white); }
-.seg-tag--cond { background: var(--color-steel);     color: var(--color-white); }
+.seg-tag--req  { background: #dc2626; color: var(--color-white); }
+.seg-tag--rec  { background: #eab308; color: #1e2d3a; }
+.seg-tag--cond { background: #e85c1b; color: var(--color-white); }
 
 .seg-steps {
   list-style: none;

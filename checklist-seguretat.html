@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist de Seguretat — Club Pesca Caiac Catalunya</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f4f7fa;
+      color: #1e2d3a;
+      padding: 2rem;
+    }
+
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 32px rgba(0,0,0,.12);
+    }
+
+    /* Header */
+    .doc-header {
+      background: #0d2b45;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .doc-header-left h1 {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: .2rem;
+    }
+    .doc-header-left p {
+      font-size: .72rem;
+      color: rgba(255,255,255,.6);
+      letter-spacing: .04em;
+    }
+    .doc-header-right {
+      font-size: .7rem;
+      color: rgba(255,255,255,.5);
+      text-align: right;
+      line-height: 1.9;
+      flex-shrink: 0;
+    }
+
+    /* Date field */
+    .doc-date-bar {
+      background: #e8f0f8;
+      padding: .75rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid #c8d4de;
+    }
+    .doc-date-bar label {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #546878;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .doc-date-bar .date-line {
+      flex: 1;
+      border-bottom: 1.5px solid #0d2b45;
+      height: 1.2rem;
+    }
+    .doc-date-bar .sortida-label {
+      font-size: .78rem;
+      font-weight: 700;
+      color: #546878;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-left: 1.5rem;
+    }
+    .doc-date-bar .sortida-line {
+      flex: 2;
+      border-bottom: 1.5px solid #0d2b45;
+      height: 1.2rem;
+    }
+
+    /* Content */
+    .doc-body {
+      padding: 0 2rem 1.5rem;
+    }
+
+    /* Section */
+    .cl-section {
+      margin-top: 1.5rem;
+    }
+    .cl-section-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: .75rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid #e8f0f8;
+    }
+    .cl-section-num {
+      font-size: .62rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      color: #fff;
+      background: #1a7a8c;
+      padding: .2rem .5rem;
+      border-radius: 3px;
+    }
+    .cl-section-num--req { background: #0d2b45; }
+    .cl-section-num--warn { background: #e85c1b; }
+    .cl-section-title {
+      font-size: .82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: #0d2b45;
+    }
+
+    /* Checklist items */
+    .cl-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+    }
+    .cl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .55rem .75rem;
+      border-radius: 6px;
+      background: #f9fbfd;
+      border: 1px solid #e4ecf3;
+    }
+    .cl-item:hover { background: #f0f6ff; }
+    .cl-checkbox {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #0d2b45;
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+    .cl-item-content {
+      flex: 1;
+    }
+    .cl-item-name {
+      font-size: .85rem;
+      font-weight: 700;
+      color: #1e2d3a;
+      line-height: 1.3;
+    }
+    .cl-item-desc {
+      font-size: .75rem;
+      color: #546878;
+      line-height: 1.5;
+      margin-top: .15rem;
+    }
+    .cl-tag {
+      font-size: .6rem;
+      font-weight: 800;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .15rem .4rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+    .cl-tag--obl  { background: #dc2626; color: #fff; }
+    .cl-tag--rec  { background: #eab308; color: #1e2d3a; }
+    .cl-tag--cond { background: #e85c1b; color: #fff; }
+
+    /* Meteo quick check */
+    .cl-meteo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .45rem;
+    }
+    .cl-meteo-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .55rem .75rem;
+      border-radius: 6px;
+      background: #f9fbfd;
+      border: 1px solid #e4ecf3;
+    }
+    .cl-meteo-name {
+      font-size: .82rem;
+      font-weight: 700;
+      color: #1e2d3a;
+    }
+    .cl-meteo-desc {
+      font-size: .7rem;
+      color: #546878;
+    }
+
+    /* Emergency */
+    .cl-emergency {
+      display: flex;
+      gap: .75rem;
+      margin-top: .75rem;
+    }
+    .cl-emergency-card {
+      flex: 1;
+      background: #f0f6ff;
+      border: 1px solid #c8d4de;
+      border-left: 3px solid #0d2b45;
+      border-radius: 0 6px 6px 0;
+      padding: .75rem 1rem;
+    }
+    .cl-emergency-label {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #546878;
+      margin-bottom: .15rem;
+    }
+    .cl-emergency-num {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #0d2b45;
+      letter-spacing: .04em;
+    }
+    .cl-emergency-sub {
+      font-size: .65rem;
+      color: #546878;
+    }
+
+    /* Alert */
+    .cl-alert {
+      margin-top: .75rem;
+      border: 1.5px solid #b91c1c;
+      border-left: 4px solid #b91c1c;
+      border-radius: 0 6px 6px 0;
+      background: #fff9f9;
+      padding: .85rem 1rem;
+    }
+    .cl-alert-label {
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #b91c1c;
+      margin-bottom: .35rem;
+    }
+    .cl-alert p {
+      font-size: .8rem;
+      color: #1e2d3a;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      background: #f4f7fa;
+      border-top: 1px solid #e4ecf3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .68rem;
+      color: #546878;
+    }
+
+    /* Print button (no apareix al PDF) */
+    .print-bar {
+      max-width: 720px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .btn-print {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.5rem;
+      background: #e85c1b;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .btn-print:hover { background: #c44c13; }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem 1.5rem;
+      background: transparent;
+      color: #0d2b45;
+      border: 2px solid #0d2b45;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background .2s, color .2s;
+    }
+    .btn-back:hover { background: #0d2b45; color: #fff; }
+
+    /* Print styles */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .print-bar { display: none; }
+      .page { box-shadow: none; border-radius: 0; }
+      .cl-item:hover { background: #f9fbfd; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="seguretat.html" class="btn-back">← Tornar</a>
+    <button class="btn-print" onclick="window.print()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 6,2 18,2 18,9"/><path d="M6,18H4a2,2 0 0,1-2-2v-5a2,2 0 0,1 2-2h16a2,2 0 0,1 2,2v5a2,2 0 0,1-2,2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      Descarregar / Imprimir PDF
+    </button>
+  </div>
+
+  <div class="page">
+
+    <div class="doc-header">
+      <div class="doc-header-left">
+        <h1>Checklist de Seguretat — Pre-sortida</h1>
+        <p>Club Pesca Caiac Catalunya · Protocol Rev. 1 — 2026</p>
+      </div>
+      <div class="doc-header-right">
+        Revisar tots els punts<br>
+        abans de cada sortida
+      </div>
+    </div>
+
+    <div class="doc-date-bar">
+      <label>Data</label>
+      <div class="date-line"></div>
+      <span class="sortida-label">Zona de sortida</span>
+      <div class="sortida-line"></div>
+    </div>
+
+    <div class="doc-body">
+
+      <!-- 01 Equip de Seguretat Personal -->
+      <div class="cl-section">
+        <div class="cl-section-header">
+          <span class="cl-section-num cl-section-num--req">01</span>
+          <span class="cl-section-title">Equip de Seguretat Personal</span>
+        </div>
+        <ul class="cl-list">
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Armilla de Flotació (CE)</div>
+              <div class="cl-item-desc">Ús obligatori en tot moment. Ajustada i específica per a palada.</div>
+            </div>
+            <span class="cl-tag cl-tag--obl">OBL.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Senyalització Sonora i Visual</div>
+              <div class="cl-item-desc">Silbat d'emergència acoblat a l'armilla i bandera d'alta visibilitat.</div>
+            </div>
+            <span class="cl-tag cl-tag--obl">OBL.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Comunicacions</div>
+              <div class="cl-item-desc">Ràdio VHF estanca (Canal 16) i mòbil en funda estanca amb bateria al 100%.</div>
+            </div>
+            <span class="cl-tag cl-tag--obl">OBL.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Il·luminació 360°</div>
+              <div class="cl-item-desc">Llum blanca per a navegació nocturna o amb visibilitat reduïda.</div>
+            </div>
+            <span class="cl-tag cl-tag--cond">COND.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 02 Eines d'Intervenció -->
+      <div class="cl-section">
+        <div class="cl-section-header">
+          <span class="cl-section-num">02</span>
+          <span class="cl-section-title">Eines d'Intervenció i Manipulació</span>
+        </div>
+        <ul class="cl-list">
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Ganivet de Seguretat</div>
+              <div class="cl-item-desc">Accessible amb una sola mà per al tall de caps o línies. Allotjament fix i de fàcil accés.</div>
+            </div>
+            <span class="cl-tag cl-tag--obl">OBL.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Cisalla de Tall Reforçat</div>
+              <div class="cl-item-desc">Capaç de tallar acer d'hams en cas d'accident o enredada crítica.</div>
+            </div>
+            <span class="cl-tag cl-tag--rec">REC.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Pinces d'Agafada Llarga</div>
+              <div class="cl-item-desc">Manipulació segura d'espècies verinoses (Aranya de mar, Cabracho).</div>
+            </div>
+            <span class="cl-tag cl-tag--rec">REC.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Carrito de Transport</div>
+              <div class="cl-item-desc">Comprovar que el carrito és al vehicle per al trasllat del kayak fins a l'aigua i de tornada.</div>
+            </div>
+            <span class="cl-tag cl-tag--rec">REC.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 03 Procediments Pre-sortida -->
+      <div class="cl-section">
+        <div class="cl-section-header">
+          <span class="cl-section-num cl-section-num--req">03</span>
+          <span class="cl-section-title">Procediments Pre-sortida</span>
+        </div>
+        <ul class="cl-list">
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Pla de Navegació comunicat</div>
+              <div class="cl-item-desc">Contacte en terra informat de: zona, ruta prevista i hora estimada de retorn.</div>
+            </div>
+            <span class="cl-tag cl-tag--obl">OBL.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Assegurament de Càrrega</div>
+              <div class="cl-item-desc">Leashes a pales i canyes. Tot equip estibat i fixat al kayak.</div>
+            </div>
+            <span class="cl-tag cl-tag--obl">OBL.</span>
+          </li>
+          <li class="cl-item">
+            <div class="cl-checkbox"></div>
+            <div class="cl-item-content">
+              <div class="cl-item-name">Roba Tècnica adequada</div>
+              <div class="cl-item-desc">Neoprè o vestit sec segons temperatura de l'aigua. La temperatura de l'aigua pot diferir molt de la de l'aire.</div>
+            </div>
+            <span class="cl-tag cl-tag--obl">OBL.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 04 Meteorologia -->
+      <div class="cl-section">
+        <div class="cl-section-header">
+          <span class="cl-section-num cl-section-num--warn">04</span>
+          <span class="cl-section-title">Verificació Meteorològica</span>
+        </div>
+        <div class="cl-meteo-grid">
+          <div class="cl-meteo-item">
+            <div class="cl-checkbox"></div>
+            <div>
+              <div class="cl-meteo-name">Windguru</div>
+              <div class="cl-meteo-desc">Ratxes i direcció del vent</div>
+            </div>
+          </div>
+          <div class="cl-meteo-item">
+            <div class="cl-checkbox"></div>
+            <div>
+              <div class="cl-meteo-name">Windy</div>
+              <div class="cl-meteo-desc">Models i corrents marines</div>
+            </div>
+          </div>
+          <div class="cl-meteo-item">
+            <div class="cl-checkbox"></div>
+            <div>
+              <div class="cl-meteo-name">ElTiempo.es / AEMET</div>
+              <div class="cl-meteo-desc">Alertes meteorològiques oficials</div>
+            </div>
+          </div>
+          <div class="cl-meteo-item">
+            <div class="cl-checkbox"></div>
+            <div>
+              <div class="cl-meteo-name">Puertos del Estado</div>
+              <div class="cl-meteo-desc">Dades de boies: ona i període</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 05 Emergències -->
+      <div class="cl-section">
+        <div class="cl-section-header">
+          <span class="cl-section-num cl-section-num--req">05</span>
+          <span class="cl-section-title">Telèfons d'Emergència</span>
+        </div>
+        <div class="cl-emergency">
+          <div class="cl-emergency-card">
+            <div class="cl-emergency-label">Salvament Marítim</div>
+            <div class="cl-emergency-num">900 202 202</div>
+            <div class="cl-emergency-sub">Gratuït · 24 h</div>
+          </div>
+          <div class="cl-emergency-card">
+            <div class="cl-emergency-label">Emergències</div>
+            <div class="cl-emergency-num">112</div>
+            <div class="cl-emergency-sub">Gratuït · 24 h</div>
+          </div>
+        </div>
+        <div class="cl-alert">
+          <div class="cl-alert-label">Picadures d'Espècies Verinoses</div>
+          <p>Aplicar calor intens a la zona afectada (toxina termolàbil) i acudir immediatament a un centre mèdic.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="doc-footer">
+      <span>Club Pesca Caiac Catalunya © 2026</span>
+      <span>OBL. = Obligatori · REC. = Recomanat · COND. = Condicional</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
