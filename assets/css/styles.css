@@ -1833,6 +1833,8 @@ footer p { font-size: .88rem; }
 .seg-block {
   background: var(--color-white);
   padding: 1.75rem 2rem;
+  min-width: 0;
+  overflow-x: auto;
 }
 
 .seg-block--full {
@@ -2087,13 +2089,14 @@ footer p { font-size: .88rem; }
   letter-spacing: .03em;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .seg-bento { grid-template-columns: 1fr; }
   .seg-block--full { grid-column: 1; }
   .seg-meteo-grid  { grid-template-columns: 1fr 1fr; }
   .seg-doc-header  { flex-direction: column; align-items: flex-start; gap: .5rem; }
   .seg-doc-meta    { text-align: left; }
   .seg-item-name   { white-space: normal; }
+  .seg-emergency-banner { padding: .55rem 1rem; }
 }
 
 /* =========================================================
