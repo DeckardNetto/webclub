@@ -40,9 +40,23 @@ webclub/
 - **Icones de tarjetes**: color taronja `var(--color-accent)` — classes `.card-icon` i `.collab-card-icon`
 - **Tags de seguretat**: OBL.=vermell `#dc2626`, COND.=taronja `#e85c1b`, REC.=groc `#eab308` (text fosc)
 
-## Pàgina Seguretat
-- `seguretat.html`: protocol tècnic en format bento grid (5 blocs: equip personal, eines, procediments, meteorologia, emergències)
-- `checklist-seguretat.html`: checklist pre-sortida imprimible/PDF — s'obre des d'un botó a seguretat.html. Inclou camps de data i zona, caselles per marcar, i telèfons d'emergència. Botó "Descarregar / Imprimir PDF" usa `window.print()`
+## Pàgina Seguretat (`seguretat.html`)
+- Bento grid amb etiquetes **Bloc 1 … Bloc 6** (no 01/02)
+- Banner vermell destacat a dalt del tot amb telèfons d'emergència (112 i 900 202 202) clicables
+- **Bloc 1** — Equip de Seguretat Personal (armilla, senyalització, comunicacions, il·luminació, pala de recanvi, leash de pala)
+- **Bloc 2** — Eines d'Intervenció (ganivet, cisalla, pinces, carrito de transport)
+- **Bloc 3** — Procediments Operatius — Protocols de Sortida
+- **Bloc 4** — Monitorització Meteorològica (Windguru, Windy, AEMET, Puertos del Estado)
+- **Bloc 5** — Primers Auxilis (telèfons + protocol picadures verinoses)
+- **Bloc 6** — Botiquí Bàsic (antihistamínic, analgèsic, antisèptic, crema solar, sèrum fisiològic)
+- Tags: OBL.=vermell `#dc2626`, COND.=taronja `#e85c1b`, REC.=groc `#eab308` (text fosc `#1e2d3a`)
+- Taules responsives: `table-layout: fixed`, columna "Especificació" amagada a mòbil (≤720px)
+
+## Checklist PDF (`checklist-seguretat.html`)
+- Pàgina autònoma optimitzada per imprimir/guardar com PDF (`window.print()`)
+- S'obre des d'un botó a `seguretat.html`
+- Inclou: camps data + zona, 6 blocs amb caselles, telèfons d'emergència i llegenda OBL/COND/REC
+- NO té header/footer del lloc — és un document independent
 
 ## Formularis
 - Formspree endpoint: `https://formspree.io/f/xkoywnyw`
